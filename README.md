@@ -2,11 +2,46 @@
 
 This project provides an open-source IP-KVM solution.
 
-Related article:
+```
+############### https://github.com/jacksonliam/mjpg-streamer
 
-[DIY 一个运维神器 Open IP-KVM](https://zhuanlan.zhihu.com/p/578602475)
 
-[English Version By Google Translate](https://zhuanlan-zhihu-com.translate.goog/p/578602475?_x_tr_sl=zh-CN&_x_tr_tl=en)
+sudo apt-get install cmake libjpeg8-dev
+sudo apt-get install gcc g++
+
+git clone https://github.com/jacksonliam/mjpg-streamer
+cd mjpg-streamer/mjpg-streamer-experimental/
+make
+sudo make install
+which mjpg_streamer
+mjpg_streamer
+
+
+
+################# https://github.com/ewertonbb/open-ip-kvm
+
+#Baixa e configura o repositório do Node.js 24
+curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
+sudo apt install -y nodejs
+
+git clone https://github.com/ewertonbb/open-ip-kvm
+cd open-ip-kvm/
+
+rm -rf node_modules package-lock.json
+npm cache clean --force
+
+npm install
+vi ./server/config.json
+
+
+npm start
+
+
+sudo fuser /dev/video0
+sudo kill -9 VALOR_DO_PID
+sudo killall -9 mjpg_streamer
+
+```
 
 ## What is IP-KVM
 
